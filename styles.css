@@ -369,6 +369,11 @@ h3 {
   object-fit: cover;
 }
 
+.hero-media picture {
+  display: block;
+  height: 100%;
+}
+
 .booking-card {
   position: absolute;
   right: 18px;
@@ -537,7 +542,10 @@ h3 {
   color: var(--white);
   background:
     linear-gradient(180deg, oklch(0.18 0.04 124 / 0.05), oklch(0.18 0.04 124 / 0.76)),
-    url("assets/taxi-villa-signorini.jpeg") center / cover;
+    image-set(
+      url("assets/taxi-villa-signorini.webp") type("image/webp"),
+      url("assets/taxi-villa-signorini.jpeg") type("image/jpeg")
+    ) center / cover;
   border-radius: 16px;
   outline: none;
   transform-origin: center bottom;
@@ -546,7 +554,10 @@ h3 {
 .journey-panel:nth-child(2) {
   background:
     linear-gradient(180deg, oklch(0.18 0.04 124 / 0.05), oklch(0.18 0.04 124 / 0.76)),
-    url("assets/taxi-napoli-maschio-angioino.jpeg") center / cover;
+    image-set(
+      url("assets/taxi-napoli-maschio-angioino.webp") type("image/webp"),
+      url("assets/taxi-napoli-maschio-angioino.jpeg") type("image/jpeg")
+    ) center / cover;
 }
 
 .journey-panel:nth-child(3) {
@@ -772,16 +783,29 @@ h3 {
   align-items: end;
 }
 
+.fleet-gallery picture,
 .fleet-gallery img {
   width: 100%;
   height: clamp(340px, 48vw, 620px);
-  object-fit: cover;
-  border-radius: 16px;
+}
+
+.fleet-gallery picture {
+  display: block;
   transform: translateY(calc(var(--parallax, 0) * -24px));
 }
 
-.fleet-gallery img + img {
+.fleet-gallery img {
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.fleet-gallery picture + picture,
+.fleet-gallery picture + picture img {
   height: clamp(260px, 34vw, 440px);
+}
+
+.fleet-gallery picture + picture {
   transform: translateY(calc(var(--parallax, 0) * 18px));
 }
 
@@ -1236,8 +1260,10 @@ h3 {
     margin-bottom: 42px;
   }
 
+  .fleet-gallery picture,
+  .fleet-gallery picture + picture,
   .fleet-gallery img,
-  .fleet-gallery img + img {
+  .fleet-gallery picture + picture img {
     height: 390px;
   }
 
@@ -1325,8 +1351,10 @@ h3 {
   }
 
   .scroll-progress span,
+  .fleet-gallery picture,
+  .fleet-gallery picture + picture,
   .fleet-gallery img,
-  .fleet-gallery img + img {
+  .fleet-gallery picture + picture img {
     transform: none !important;
   }
 

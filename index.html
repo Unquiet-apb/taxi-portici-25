@@ -19,6 +19,7 @@
     <meta property="og:image" content="https://taxiportici.it/assets/taxi-villa-signorini.jpeg" />
     <meta name="twitter:card" content="summary_large_image" />
     <title>Taxi H24 Portici | C.P. 25, Aeroporto Napoli e Zona Vesuviana</title>
+    <link rel="preload" as="image" href="assets/taxi-villa-signorini.webp" type="image/webp" fetchpriority="high" />
     <link rel="stylesheet" href="styles.css" />
     <script type="application/ld+json">
       {
@@ -187,7 +188,14 @@
 
         <div class="hero-media" aria-label="Taxi bianco a Portici">
           <picture>
-            <img src="assets/taxi-villa-signorini.jpeg" alt="Taxi bianco C.P. 25 davanti a Villa Signorini a Portici" />
+            <source srcset="assets/taxi-villa-signorini.webp" type="image/webp" />
+            <img
+              src="assets/taxi-villa-signorini.jpeg"
+              alt="Taxi bianco C.P. 25 davanti a Villa Signorini a Portici"
+              width="1200"
+              height="1600"
+              fetchpriority="high"
+            />
           </picture>
           <div class="booking-card" aria-label="Prenotazione rapida">
             <span>Partenza</span>
@@ -370,8 +378,26 @@
           </ul>
         </div>
         <div class="fleet-gallery" data-parallax>
-          <img src="assets/taxi-napoli-maschio-angioino.jpeg" alt="Taxi C.P. 25 vicino al Maschio Angioino a Napoli" />
-          <img src="assets/taxi-villa-signorini.jpeg" alt="Vista laterale del taxi C.P. 25 a Portici" />
+          <picture>
+            <source srcset="assets/taxi-napoli-maschio-angioino.webp" type="image/webp" />
+            <img
+              src="assets/taxi-napoli-maschio-angioino.jpeg"
+              alt="Taxi C.P. 25 vicino al Maschio Angioino a Napoli"
+              width="1200"
+              height="1600"
+              loading="lazy"
+            />
+          </picture>
+          <picture>
+            <source srcset="assets/taxi-villa-signorini.webp" type="image/webp" />
+            <img
+              src="assets/taxi-villa-signorini.jpeg"
+              alt="Vista laterale del taxi C.P. 25 a Portici"
+              width="1200"
+              height="1600"
+              loading="lazy"
+            />
+          </picture>
         </div>
       </section>
 
